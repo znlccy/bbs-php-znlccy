@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>沙龙活动</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css" }
+    {css href="/static/css/bootstrap.min.css" }
+    {css href="/static/css/semantic.min.css" }
+    {css href="/static/css/style.css" }
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js" }
+    {js href="/static/js/bootstrap.min.js" }
+    {js href="/static/js/jquery.bxslider.min.js" }
+    {js href="/static/js/semantic.min.js" }
+    {js href="/static/js/main.js"}
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header" }
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="active_content">
+        <div class="container">
+            <div class="row">
+                <!-- Navigation Path Begin -->
+                <div class="path">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{:url('index/index')}" class="text-muted">创享沙龙管理平台</a>
+                        </li>
+                        <li>
+                            <a href="{:url('active/index')}" class="active text-success">沙龙活动</a>
+                        </li>
+                    </ol>
+                </div>
+                <!-- Navigation Path End -->
+            </div>
+
+            <!-- Content Detail Begin -->
+            <div class="row">
+                <!-- Part One Begin -->
+                {volist name="data" id="vo"}
+                <div class="col-md-4">
+                    <div class="active-box-wrapper">
+                        <div class="active_image">
+                            <a href="{:url('active/introduce',['id' => $vo['id']])}">
+                                {eq name="vo.picture" value=""}
+                                <img src="/static/images/image.png" alt="" width="100%" height="240px">
+                                {else/}
+                                <img src="{$vo.picture}" alt="" width="100%" height="240px">
+                                {/eq}
+                            </a>
+                        </div>
+                        <div class="active_description" style="padding: 12px 10px">
+                            <div class="active_title pull-left">
+                                <a href="{:url('active/introduce',['id' => $vo['id']])}">
+                                    <h4>{$vo.title}</h4>
+                                </a>
+                            </div>
+                            <div class="active_status">
+                                <span class="pull-right">
+                                    {eq name="vo.status" value="1"}
+                                        <i class="circle icon text-success"></i>
+                                        <span class="text-success">
+                                            <strong>进行中</strong>
+                                        </span>
+                                    {else/}
+                                        <i class="circle icon text-muted"></i>
+                                        <span class="text-muted">
+                                            <strong>已结束</strong>
+                                        </span>
+                                    {/eq}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="activity_content" style="margin-top: 15px;height:68px;padding-left: 10px;padding-right: 10px">
+                            {$vo.content}
+                        </div>
+                        <div class="activity_footer" style="margin-top: 5px;padding-left: 10px;padding-right: 10px">
+                            <div class="pull-left">
+                                <i class="marker icon text-muted"></i>
+                                <span class="text-muted">
+                                    {$vo.address}
+                                </span>
+                            </div>
+                            <div class="pull-right">
+                                <i class="wait icon text-muted"></i>
+                                <span class="text-muted">
+                                    {$vo.begintime} - {$vo.endtime}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/volist}
+                <!-- Part One End -->
+            </div>
+            <!-- Content Detail End -->
+        </div>
+
+        <!-- Page Part Begin -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="page_content">
+                        <!--总记录数:{$data->total()}-->
+                        {$data->render()}
+                        <!--总页数{$data->lastPage()}-->
+                        <!--<select name="" id="" style="margin-left:12px;width: 100px;height: 34px;border: 1px solid #D4D4D5;border-radius: 3px;padding-left: 20px">
+                            <option value="">6条/页</option>
+                            <option value="">12条/页</option>
+                            <option value="">18条/页</option>
+                            <option value="">24条/页</option>
+                        </select>-->
+                    </div>
+                    <div class="pagenumber">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Part End -->
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer" }
+    <!-- Footer Part End -->
+</body>
+</html>

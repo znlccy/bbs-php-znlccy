@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>沙龙回顾</title>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css"}
+    {css href="/static/css/bootstrap.min.css"}
+    {css href="/static/css/semantic.min.css"}
+    {css href="/static/css/style.css"}
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js"}
+    {js href="/static/js/bootstrap.min.js"}
+    {js href="/static/js/semantic.min.js"}
+    {js href="/static/js/jquery.bxslider.min.js"}
+    {js href="/static/js/index.js"}
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header" }
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="review_content">
+        <div class="container">
+            <div class="row">
+                <div class="path" style="margin-top: 10px">
+                    <ol class="breadcrumb" style="background: transparent">
+                        <li>
+                            <a href="{:url('index/index')}">创享沙龙管理平台</a>
+                        </li>
+                        <li>
+                            <a href="{:url('review/index')}">活动回顾</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ui list">
+                    {volist name="review" id="vo"}
+                    <div class="item" style="margin: 7.5px 0px;border-bottom: 1px dashed #d4d4d5;">
+                        <div class="col-md-4">
+                            <a href="{:url('review/detail',['id' => $vo['id']])}">
+                                {eq name="vo.picture" value=""}
+                                <img class="ui image" src="/static/images/image.png" style="height: 200px;width: 305px;border-radius: 3px;"  alt="">
+                                {else}
+                                <img class="ui image" src="{$vo.picture}" style="height: 200px;width: 305px;border-radius: 3px;"  alt="">
+                                {/eq}
+                            </a>
+                        </div>
+                        <div class="col-md-8" >
+                            <div class="content" style="margin-top: 30px;">
+                                <div class="header">
+                                    <a href="{:url('review/detail',['id' => $vo['id']])}" style="color: #0f0f10">
+                                        <h3>{$vo.title}</h3>
+                                    </a>
+                                </div>
+                                <div class="description text-muted" style="margin-top: 15px">
+                                    <div style="height: 76px;line-height: 25px">
+                                        {$vo.content}
+                                    </div>
+                                </div>
+                                <div class="text-muted" style="padding-top: 15px">
+                                    <i class="wait icon"></i>
+                                    <span>{$vo.publishtime}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+            <div class="row text-center">
+                {$review->render()}
+            </div>
+        </div>
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer" }
+    <!-- Footer Part End -->
+</body>
+</html>

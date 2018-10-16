@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>服务资源分类</title>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css" }
+    {css href="/static/css/bootstrap.min.css" }
+    {css href="/static/css/semantic.min.css" }
+    {css href="/static/css/style.css" }
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js" }
+    {js href="/static/js/bootstrap.min.js" }
+    {js href="/static/js/jquery.bxslider.min.js" }
+    {js href="/static/js/semantic.min.js" }
+    {js href="/static/js/index.js" }
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header" }
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="category_content">
+        <div class="container">
+            <div class="row">
+                <div class="path">
+                    <ol class="breadcrumb" style="margin-top: 15px; background: transparent">
+                        <li>
+                            <a href="{:url('index/index')}" class="text-muted">创享沙龙管理平台</a>
+                        </li>
+                        <li>
+                            <a href="{:url('service/index')}" class="text-muted">创业服务资源</a>
+                        </li>
+                        <li>
+                            <a href="{:url('service/category',['id' => $catemenu['id']])}">{$catemenu.categoryname}</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                <div class="ui four cards">
+                    {volist name="category" id="vo"}
+                    <div class="ui card">
+                        <div class="image">
+                            <a href="{:url('service/detail',['id' => $vo['id']])}">
+                                {eq name="vo.picture" value=""}
+                                <img src="/static/images/image.png" alt="" style="height: 260px;width: 277px;z-index: -8;border-top-left-radius: 3px;border-top-right-radius: 3px">
+                                {else/}
+                                <img src="{$vo.picture}" alt="" style="height: 260px;width: 277px;z-index: -8;border-top-left-radius: 3px;border-top-right-radius: 3px">
+                                {/eq}
+                            </a>
+                        </div>
+                        <div class="content">
+                            <div class="header">
+                                <span>
+                                    <a href="{:url('service/detail',['id' => $vo['id']])}" class="text-muted">{$vo.name}</a>
+                                </span>
+                                {eq name="vo.recommend" value="1"}
+                                <span class="right floated">
+                                    <!--<i class="heart icon"></i>-->
+                                    <p class="label label-danger">推荐</p>
+                                </span>
+                                {/eq}
+                            </div>
+                            <div class="description">
+                                {$vo.description}
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <span style="color: #FF5C03;line-height: 36px">
+                                <i class="yen icon"></i>
+                                <strong style="font-size: 15px">{$vo.price}</strong>
+                            </span>
+                            <span class="right floated">
+                                <a href="" class="ui primary button">QQ咨询</a>
+                            </span>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+            </div>
+            <div class="row">
+                {$category->render()}
+            </div>
+        </div>
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer" }
+    <!-- Footer Part End -->
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <title>登录页面</title>
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <!-- 自定义媒体查询 -->
+    <style rel="stylesheet" type="text/css">
+         @media screen and (max-width: 768px){
+             .zc_font {
+                 font-size: 6px;
+             }
+         }
+    </style>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css"}
+    {css href="/static/css/bootstrap.min.css"}
+    {css href="/static/css/semantic.min.css"}
+    {css href="/static/css/style.css"}
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js"}
+    {js href="/static/js/bootstrap.min.js"}
+    {js href="/static/js/jquery.bxslider.min.js"}
+    {js href="/static/js/semantic.min.js"}
+    {js href="/static/js/main.js"}
+</head>
+<body>
+    <!-- Header Begin -->
+    <header id="zc_login_header">
+        <div class="container">
+            <div class="row">
+               <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-md-7 col-xs-7 col-lg-7 col-sm-7">
+                   <div class="row">
+                       <img src="/static/images/login_header_logo.png" alt="公司logo" class="img-responsive">
+                       <strong>创享沙龙</strong>
+                   </div>
+               </div>
+                <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+                    <div id="zc_aboutus_welcome">
+                        <i class="smile icon"></i>
+                        <span>
+                            欢迎访问登录页面
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Privacy Begin -->
+        <div class="zc_privacy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-11 col-md-11 col-sm-11 col-xs-11">
+                        <div class="text-muted">
+                            <i class="info circle icon"></i>
+                            <span class="zc_font">依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ <a href="{:url('index/privacy')}" class="black" target="_blank" style="outline: rgb(109, 109, 109) none 0px;">《沙龙隐私政策》</a>已上线，将更有利于保护您的个人隐私。</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Privacy End -->
+    </header>
+    <!-- Header End -->
+
+    <!-- Content Begin -->
+    <section id="zc_login_content">
+        <div class="container">
+            <div class="row">
+                <!-- Left Part Begin -->
+                <div class="col-md-7">
+                    <div class="container">
+                        <div class="col-md-offset-1 col-md-10">
+                            <div class="login_left_img">
+                                <img src="/static/images/login_left.png" alt="" class="img-responsive">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left Part End -->
+
+                <!-- Right Part Begin -->
+                <div class="col-md-4">
+                    <div class="login_right_form">
+                        <div class="login_right_header text-center">
+                            <!--<i class="info circle icon"></i>-->
+                            <span>
+                                <strong>创享沙龙登录</strong>
+                            </span>
+                        </div>
+                        <div class="login_right_body ui middle form">
+                            <form action="{url:('index/handleLogin')}" method="post" class="login_form">
+                                <div class="ui segment">
+                                    <div class="field">
+                                        <div class="ui icon input">
+                                            <i class="user icon"></i>
+                                            <input type="text" name="username" id="username" placeholder="用户名/手机号/邮箱">
+                                        </div>
+                                    </div>
+
+                                    <div class="field">
+                                        <div class="ui icon input">
+                                            <i class="lock icon"></i>
+                                            <input type="password" name="password" id="password" placeholder="密码">
+                                        </div>
+                                    </div>
+
+                                    <a href="{:url('index/index/forgetPass')}">忘记密码</a>
+                                    <button id="login" type="submit" class="ui fluid large teal submit button">登录</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="login_right_footer text-right">
+                            <div class="login_right_register">
+                                <i class="angle right icon"></i>
+                                <a href="{:url('index/register')}"><strong>立即注册</strong></a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Right Part End -->
+            </div>
+        </div>
+    </section>
+    <!-- Content End -->
+
+    <!-- Footer Begin -->
+    <footer id="zc_login_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-4">
+                    <div class="links">
+                        <a rel="nofollow" target="_blank" href="{:url('index/company/aboutUs')}">
+                            关于我们
+                        </a>
+                        |
+                        <a rel="nofollow" target="_blank" href="{:url('index/company/contactUs')}" style="outline: rgb(109, 109, 109) none 0px;">
+                            联系我们
+                        </a>
+                        |
+                        <a rel="nofollow" target="_blank" href="{:url('index/company/profile')}">
+                            公司简介
+                        </a>
+                        |
+                        <a target="_blank" href="{:url('index/company/links')}">
+                            友情链接
+                        </a>
+                        |
+                        <a target="_blank" href="{:url('index/company/team')}">
+                            技术团队
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row copyright">
+                <div class="col-md-offset-4 col-md-4 text-center">
+                    <p style="margin-left: 40px">Copyright © 2018-2028 创享沙龙Salon 版权所有</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+</body>
+<script type="text/javascript">
+
+</script>
+</html>

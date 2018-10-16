@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>推荐服务</title>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css" }
+    {css href="/static/css/bootstrap.min.css" }
+    {css href="/static/css/semantic.min.css" }
+    {css href="/static/css/style.css" }
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js" }
+    {js href="/static/js/jquery.bxslider.min.js" }
+    {js href="/static/js/bootstrap.min.js" }
+    {js href="/static/js/semantic.min.js" }
+    {js href="/static/js/index.js" }
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header" }
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="service_more">
+        <div class="container">
+            <div class="row">
+                <div class="path" style="margin-top: 15px;">
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="">创享沙龙管理平台</a>
+                        </li>
+                        <li>
+                            <a href="{:url('service/index')}">创业服务资源</a>
+                        </li>
+                        <li>
+                            <a href="{:url('service/more')}" class="text-muted">更多推荐服务</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="row">
+                {volist name="more" id="vo"}
+                <div class="col-md-3 service_card">
+                    <div class="ui card">
+                        <div class="image">
+                            <a href="{:url('service/detail',['id' => $vo['id']])}">
+                                {eq name="vo.picture" value=""}
+                                <img src="/static/images/image.png" style="width: 100%;border-top-right-radius: 3px;border-top-left-radius: 3px" alt="">
+                                {else/}
+                                <img src="{$vo.picture}" style="width: 100%;border-top-right-radius: 3px;border-top-left-radius: 3px"  alt="">
+                                {/eq}
+                            </a>
+                        </div>
+                        <div class="content service_card_content">
+                            <div class="header">
+                                <a href="{:url('service/detail',['id' => $vo['id']])}">{$vo.name}</a>
+                                <!--<a class="ui red tag label">推荐</a>-->
+                                <span class="label label-danger right floated" style="color: white">推荐</span>
+                            </div>
+                            <div class="description">
+                                {$vo.description}
+                            </div>
+                        </div>
+                        <div class="extra content">
+                            <span class="right floated">
+                                <i class="heart icon"></i>
+                            </span>
+                            <span>
+                                <i class="yen icon"></i>
+                                <strong>{$vo.price}</strong>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                {/volist}
+                <div>
+                    {$more->render()}
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer" }
+    <!-- Footer Part End -->
+</body>
+</html>

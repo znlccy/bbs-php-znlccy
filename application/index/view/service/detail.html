@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>创业服务详情界面</title>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css" }
+    {css href="/static/css/bootstrap.min.css" }
+    {css href="/static/css/semantic.min.css" }
+    {css href="/static/css/style.css" }
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js" }
+    {js href="/static/js/bootstrap.min.js" }
+    {js href="/static/js/jquery.bxslider.min.js" }
+    {js href="/static/js/semantic.min.js" }
+    {js href="/static/js/index.js" }
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header" }
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="service_detail_content">
+        <div class="container">
+
+            <!-- Path Part Begin -->
+            <div class="row">
+                <div class="path" style="margin-top: 15px;">
+                    <ol class="breadcrumb" style="background: transparent">
+                        <li>
+                            <a href="{:url('index/index')}">创享沙龙管理平台</a>
+                        </li>
+                        <li>
+                            <a href="{:url('service/index')}">创业服务资源</a>
+                        </li>
+                        <li>
+                            <a href="" class="text-danger">{$data['name']}</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <!-- Path Part End -->
+
+            <!-- Service Introduce Begin -->
+            <div class="row">
+                <!-- Left Part Begin -->
+                <div class="col-md-9">
+                    <div class="col-md-12" style="padding-left: 0px">
+                        <!-- Image Part Begin -->
+                        <div class="col-md-6" style="padding-left: 0px;border-radius: 3px; border: 1px solid #d4d4d5;">
+                            {eq name="data.picture" value=""}
+                            <img src="/static/images/image.png" style="border-radius: 3px;" width="414px" height="368px" alt="">
+                            {else/}
+                            <img src="{$data['picture']}" style="border-radius: 3px;" width="414px" height="368px" alt="">
+                            {/eq}
+                        </div>
+                        <!-- Image Part End -->
+
+                        <!-- Service Content Part Begin -->
+                        <div class="col-md-6">
+                            <div class="box_wrapper" style="margin-top: 40px;">
+                                <div>
+                                <span>
+                                    <h3 class="text-muted">{$data.name}</h3>
+                                </span>
+                                </div>
+                                <div class="description" style="margin-top: 35px;" >
+                                    <span class="text-muted">
+                                        {$data['description']}
+                                    </span>
+                                </div>
+                                <div class="price" style="margin-top:35px;height: 80px;font-size: 18px;border-radius:3px;width: 100%;color: #FF5C03;background-color: #E0E0E0;">
+                                    <div style="margin-left:10%;line-height: 80px">
+                                        <strong>价格:</strong>
+                                        <i class="yen icon" style="margin-right: 0px"></i>
+                                        <span>
+                                            <strong>{$data['price']}</strong>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="consult" style="margin-top: 45px">
+                                    <a href="" class="ui primary button" style="height: 38px;width: 140px">立即咨询</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Service Content Part End -->
+                    </div>
+
+                    <!-- Service Content Detail Begin -->
+                    <div class="col-md-12" style="padding-left: 0px;border: 1px solid #E0E0E0;border-radius:3px;background-color: #E0E0E0;margin-top: 15px;height: 600px">
+                        <div class="col-md-12 " style="padding-left: 0px">
+                            <!--<h3>服务内容详情</h3>-->
+                        </div>
+                    </div>
+                    <!-- Service Content Detail End -->
+                </div>
+                <!-- Left Part End -->
+
+                <!-- Right Part Begin -->
+                <div class="col-md-3 more_service_recommend">
+                    <div class="col-md-12" style="margin-top: 15px">
+                        <div class="pull-left">
+                            <h4 class="text-muted">推荐服务</h4>
+                        </div>
+                        <div class="pull-right">
+                            <a href="{:url('service/more')}" class="text-muted">更多>></a>
+                        </div>
+                    </div>
+                    {volist name="recommend" id="vo"}
+                    <div class="col-md-12">
+                        <div class="ui card">
+                            <div class="image">
+                                <a href="{:url('service/detail',['id' => $vo['id']])}">
+                                    {eq name="vo.picture" value=""}
+                                    <img src="/static/images/image.png" alt="">
+                                    {else/}
+                                    <img src="{$vo.picture}" alt="">
+                                    {/eq}
+                                </a>
+                            </div>
+                            <div class="extra content">
+                                <span class="right floated">
+                                    <i class="yen icon" style="margin-right: 0px"></i>
+                                    <span>
+                                        <strong>{$vo.price}</strong>
+                                    </span>
+                                </span>
+                                <span class="left floated" style="font-size: 15px">
+                                    <i class="thumbs up icon"></i>
+                                    <span>
+                                        <strong>{$vo.name}</strong>
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+                <!-- Right Part End -->
+            </div>
+            <!-- Service Introduce End -->
+        </div>
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer" }
+    <!-- Footer Part End -->
+</body>
+</html>

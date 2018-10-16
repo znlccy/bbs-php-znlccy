@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>沙龙活动介绍</title>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css"}
+    {css href="/static/css/bootstrap.min.css"}
+    {css href="/static/css/style.css"}
+    {css href="/static/css/semantic.min.css"}
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js"}
+    {js href="/static/js/bootstrap.min.js"}
+    {js href="/static/js/jquery.bxslider.min.js"}
+    {js href="/static/js/semantic.min.js"}
+    {js href="/static/js/index.js"}
+    <!-- 引入UEditor富文本编辑工具 -->
+    {js href="/static/ueditor/ueditor.config.js"}
+    {js href="/static/ueditor/ueditor.all.js"}
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header"}
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="active_content_introduce">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Navigation Path Begin -->
+                    <ol class="breadcrumb">
+                        <li>
+                            <a href="{:url('index/index')}">创享沙龙管理平台</a>
+                        </li>
+                        <li>
+                            <a href="{:url('active/index')}">沙龙活动</a>
+                        </li>
+                        <li>
+                            <a href="{:url('active/introduce',['id' => $active['id']])}" style="color: #FF5C03">{$active.title}</a>
+                        </li>
+                    </ol>
+                    <!-- Navigation Path End -->
+                </div>
+            </div>
+            <div class="row">
+                <!-- Active Introduce Begin -->
+                <div class="active_introduce_box" style="background-color:#D4D4D5;height: 375px;border-radius: 3px">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <div class="introduce_image" style="border-radius:3px;margin-top: 11px">
+                                    {eq name="active.picture" value=""}
+                                    <img src="/static/images/image.png" alt="" style="border-radius: 3px" width="454px" height="354px">
+                                    {else/}
+                                    <img src="{$active.picture}" alt="" style="border-radius: 3px" width="454px" height="354px">
+                                    {/eq}
+
+                                </div>
+                            </div>
+                            <div class="col-md-7" style="margin: 70px 0px;">
+                                <div class="introduce_title">
+                                    <h3>{$active.title}</h3>
+                                </div>
+                                <div class="introduce_time" style="padding-top: 20px">
+                                    <p>活动时间:&nbsp;&nbsp;&nbsp;&nbsp;{$active.begintime} - {$active.endtime}</p>
+                                </div>
+                                <div class="enroll_time" style="padding-top: 20px">
+                                    <p>报名时间:&nbsp;&nbsp;&nbsp;&nbsp;{$active.begintime} - {$active.endtime} 或者 {$active.endtime}</p>
+                                </div>
+                                <div class="introduce_address" style="padding-top: 20px">
+                                    <p>活动地点:&nbsp;&nbsp;&nbsp;&nbsp;{$active.address}</p>
+                                </div>
+                                <div class="join_count" style="padding-top: 20px">
+                                    <p>参会人数:&nbsp;&nbsp;&nbsp;&nbsp;12/60 或者 不限制</p>
+                                </div>
+                                <div class="enroll" style="padding-top: 25px">
+                                    <a class="ui primary button" href="{:url('active/registration',['id' => $active['id']])}" role="button">立即报名</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Active Inteoduce End -->
+            </div>
+
+            <div class="row" style="margin-top: 15px">
+                    <div class="col-md-1">
+                        <h4>活动介绍</h4>
+                    </div>
+                    <div class="col-md-11 ui divider">
+                    </div>
+            </div>
+
+            <!-- Multilateral Media Text Begin -->
+            <div class="row" style="height: 700px; background-color: #d4d4d5;border-radius: 3px">
+                <form action="" method="post">
+                    <script id="editor" style="height: 645px"></script>
+                </form>
+
+            </div>
+            <!-- Multilateral Media Text End -->
+        </div>
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer"}
+    <!-- Footer Part End -->
+</body>
+<script type="text/javascript">
+    var ue = UE.getEditor('editor', {
+        toolbars: [
+            ['fullscreen', 'source', 'undo', 'redo', 'bold']
+        ]
+    });
+</script>
+</html>

@@ -1,0 +1,452 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6006b5402464dab19eae73229b1204fc",
+    "packages": [
+        {
+            "name": "gmars/tp5-nestedsets",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gmars/tp5-nestedsets.git",
+                "reference": "2955cee8068f5518afee0c75f034b0e3440f7cc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gmars/tp5-nestedsets/zipball/2955cee8068f5518afee0c75f034b0e3440f7cc7",
+                "reference": "2955cee8068f5518afee0c75f034b0e3440f7cc7",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gmars\\nestedsets\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "weiyongqiang",
+                    "email": "hayixia606@163.com"
+                }
+            ],
+            "description": "此扩展是thinkPHP5的nestendsets的扩展。能够方便的在项目中来管理有层级关系的数据结构。该扩展在算法上部分参考了Willfred di Vampo的nestedsets，实现了数据的插入，移动，删除，遍历等功能。",
+            "time": "2018-05-17T02:27:20+00:00"
+        },
+        {
+            "name": "gmars/tp5-rbac",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gmars/tp5-rbac.git",
+                "reference": "22c577cd93d78b6791e13a13d9f7b2330c485b1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gmars/tp5-rbac/zipball/22c577cd93d78b6791e13a13d9f7b2330c485b1d",
+                "reference": "22c577cd93d78b6791e13a13d9f7b2330c485b1d",
+                "shasum": ""
+            },
+            "require": {
+                "gmars/tp5-nestedsets": "dev-master",
+                "topthink/think-migration": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gmars\\rbac\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "weiyongqiang",
+                    "email": "hayixia606@163.com"
+                }
+            ],
+            "description": "这个扩展是基于thinkPHP5框架的RBAC权限验证的扩展。使用本扩展能够快速的将RBAC权限控制器模块引入到自己的系统中。原则上本模块适合于任何PHP框架但是由于使用了thinkPHP5的特性所以使用composer安装到其他框架时需要做相应的修改。模块所需要的扩展库可以通过thinkPHP5的migration来做数据迁移。",
+            "time": "2018-06-27T09:04:37+00:00"
+        },
+        {
+            "name": "topthink/framework",
+            "version": "v5.0.20",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/framework.git",
+                "reference": "e20f6e8cadbbc6e246a0c121c89bfd278f30c76b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/framework/zipball/e20f6e8cadbbc6e246a0c121c89bfd278f30c76b",
+                "reference": "e20f6e8cadbbc6e246a0c121c89bfd278f30c76b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "topthink/think-installer": "~1.0"
+            },
+            "require-dev": {
+                "johnkary/phpunit-speedtrap": "^1.0",
+                "mikey179/vfsstream": "~1.6",
+                "phpdocumentor/reflection-docblock": "^2.0",
+                "phploc/phploc": "2.*",
+                "phpunit/phpunit": "4.8.*",
+                "sebastian/phpcpd": "2.*"
+            },
+            "type": "think-framework",
+            "autoload": {
+                "psr-4": {
+                    "think\\": "library/think"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "the new thinkphp framework",
+            "homepage": "http://thinkphp.cn/",
+            "keywords": [
+                "framework",
+                "orm",
+                "thinkphp"
+            ],
+            "time": "2018-05-11T08:02:47+00:00"
+        },
+        {
+            "name": "topthink/think-captcha",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-captcha.git",
+                "reference": "0c55455df26a1626a60d0dc35d2d89002b741d44"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-captcha/zipball/0c55455df26a1626a60d0dc35d2d89002b741d44",
+                "reference": "0c55455df26a1626a60d0dc35d2d89002b741d44",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\captcha\\": "src/"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "captcha package for thinkphp5",
+            "time": "2016-07-06T01:47:11+00:00"
+        },
+        {
+            "name": "topthink/think-helper",
+            "version": "v1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-helper.git",
+                "reference": "0c99dc625b0d2d4124e1b6ca15a3ad6f0125963f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-helper/zipball/0c99dc625b0d2d4124e1b6ca15a3ad6f0125963f",
+                "reference": "0c99dc625b0d2d4124e1b6ca15a3ad6f0125963f",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\helper\\": "src"
+                },
+                "files": [
+                    "src/helper.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "The ThinkPHP5 Helper Package",
+            "time": "2017-04-05T07:15:37+00:00"
+        },
+        {
+            "name": "topthink/think-image",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-image.git",
+                "reference": "8586cf47f117481c6d415b20f7dedf62e79d5512"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-image/zipball/8586cf47f117481c6d415b20f7dedf62e79d5512",
+                "reference": "8586cf47f117481c6d415b20f7dedf62e79d5512",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.*",
+                "topthink/framework": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "The ThinkPHP5 Image Package",
+            "time": "2016-09-29T06:05:43+00:00"
+        },
+        {
+            "name": "topthink/think-installer",
+            "version": "v1.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-installer.git",
+                "reference": "1be326e68f63de4e95977ed50f46ae75f017556d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-installer/zipball/1be326e68f63de4e95977ed50f46ae75f017556d",
+                "reference": "1be326e68f63de4e95977ed50f46ae75f017556d",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "require-dev": {
+                "composer/composer": "1.0.*@dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "think\\composer\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "time": "2017-05-27T06:58:09+00:00"
+        },
+        {
+            "name": "topthink/think-migration",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-migration.git",
+                "reference": "8e489f8d38a39876690c0e00fcf9a54ae92c4d3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-migration/zipball/8e489f8d38a39876690c0e00fcf9a54ae92c4d3d",
+                "reference": "8e489f8d38a39876690c0e00fcf9a54ae92c4d3d",
+                "shasum": ""
+            },
+            "require-dev": {
+                "topthink/framework": "^5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Phinx\\": "phinx/src/Phinx",
+                    "think\\migration\\": "src"
+                },
+                "files": [
+                    "src/config.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "time": "2017-03-31T06:33:23+00:00"
+        },
+        {
+            "name": "topthink/think-mongo",
+            "version": "v1.8.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-mongo.git",
+                "reference": "657cc79bd5f090a58b0cc83776073dd69c83a3d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-mongo/zipball/657cc79bd5f090a58b0cc83776073dd69c83a3d1",
+                "reference": "657cc79bd5f090a58b0cc83776073dd69c83a3d1",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\mongo\\": "src"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "mongodb driver for thinkphp5",
+            "time": "2018-06-03T01:51:27+00:00"
+        },
+        {
+            "name": "topthink/think-oracle",
+            "version": "v1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-oracle.git",
+                "reference": "89a049e876167030b489322f691aed00799fd68f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-oracle/zipball/89a049e876167030b489322f691aed00799fd68f",
+                "reference": "89a049e876167030b489322f691aed00799fd68f",
+                "shasum": ""
+            },
+            "require": {
+                "topthink/framework": "~5.0.17"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "think\\oracle\\": "src"
+                },
+                "files": []
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "Oracle driver for thinkphp5",
+            "time": "2018-04-14T00:52:34+00:00"
+        },
+        {
+            "name": "topthink/think-queue",
+            "version": "v1.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-queue.git",
+                "reference": "465320c9cb7811df22d4ff8f29f58ead7d104348"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-queue/zipball/465320c9cb7811df22d4ff8f29f58ead7d104348",
+                "reference": "465320c9cb7811df22d4ff8f29f58ead7d104348",
+                "shasum": ""
+            },
+            "require": {
+                "topthink/think-helper": ">=1.0.4",
+                "topthink/think-installer": ">=1.0.10"
+            },
+            "type": "think-extend",
+            "extra": {
+                "think-config": {
+                    "queue": "src/config.php"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\": "src"
+                },
+                "files": [
+                    "src/common.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "yunwuxin",
+                    "email": "448901948@qq.com"
+                }
+            ],
+            "description": "The ThinkPHP5 Queue Package",
+            "time": "2018-05-04T05:29:53+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "gmars/tp5-nestedsets": 20,
+        "gmars/tp5-rbac": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": []
+}

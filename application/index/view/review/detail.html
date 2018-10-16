@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <title>活动回顾详情</title>
+    <!-- 引入外部css文件 -->
+    {css href="/static/css/animate.css" }
+    {css href="/static/css/bootstrap.min.css" }
+    {css href="/static/css/semantic.min.css" }
+    {css href="/static/css/style.css" }
+    <!-- 引入外部js文件 -->
+    {js href="/static/js/jquery-3.3.1.min.js" }
+    {js href="/static/js/jquery.bxslider.min.js" }
+    {js href="/static/js/bootstrap.min.js" }
+    {js href="/static/js/semantic.min.js" }
+    {js href="/static/js/index.js" }
+</head>
+<body>
+
+    <!-- Header Part Begin -->
+    {include file="common/header" }
+    <!-- Header Part End -->
+
+    <!-- Content Part Begin -->
+    <section id="active_review_content">
+        <div class="container">
+            <div class="path">
+                <ol class="breadcrumb" style="background: transparent;margin-top: 15px">
+                    <li>
+                        <a href="{:url('index/index')}" class="text-muted">创享沙龙管理平台</a>
+                    </li>
+                    <li>
+                        <a href="{:url('review/index')}" class="text-muted">活动回顾</a>
+                    </li>
+                    <li>
+                        <a href="{:url('review/detail',['id' => $detail['id']])}" class="text-danger">{$detail.title}</a>
+                    </li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div style="border: 1px solid #D4D4D5;height: 1200px;border-radius: 3px">
+                        <div class="review_header text-center text-muted" style="border-bottom: 1px dashed #D4D4D5;margin-top:15px;height: 8%">
+                            <h2>{$detail.title}</h2>
+                            <span>{$detail.publishtime}</span>
+                        </div>
+                        <div class="review_content" style="text-indent: 2em;padding-top: 15px">
+                            {$detail.content}
+                        </div>
+                        <div class="review_footer" style="margin-top: 960px;text-indent: 2em">
+                            <div>
+                                <a href="{:url('review/detail',['id' => $prev['id']])}">上一篇:{$prev.title}</a>
+                            </div>
+                            <div style="padding-top: 15px">
+                                <a href="{:url('review/detail', ['id' => $next['id']])}">下一篇:{$next.title}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div style="border: 1px solid #D4D4D5;height: 500px;border-radius: 3px">
+                        <div class="review_new text-muted" style="margin-top: 15px;padding-left: 12px">
+                            <h3>最新回顾</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Content Part End -->
+
+    <!-- Footer Part Begin -->
+    {include file="common/footer" }
+    <!-- Footer Part End -->
+</body>
+</html>
